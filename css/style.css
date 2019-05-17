@@ -1,0 +1,83 @@
+.container {
+    width: 346px;
+    height: 430;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Titulo*/ 
+.header {
+    background-color: rgb(68, 146, 236);
+}
+
+.header h1 {
+    text-align: center;
+    
+    font-size: 100%;
+    padding-top: 3px;
+}
+
+/* Formulario */
+form {
+    margin-left: 10px;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.corpo-form {
+    width: 70%;
+    float: left;
+    margin-right: 15px;
+}
+
+.marca {
+    margin-right: 20px;
+}
+
+#marca {
+    width: 70%;
+    height: 25px;
+    margin-right: 0;
+}
+
+.partes {
+    margin-bottom: 20px;
+}
+
+.partes label {
+    vertical-align: bottom;
+}
+
+input[type="text"], select {
+    float: right;
+}
+
+#anoFabricacao {
+    width: 50%;
+}
+
+#outro-text {
+    width: 130px;
+}
+
+/* Textos de Validações */
+
+.txt-validacao {
+    position: absolute;
+    top: 50px;
+    left: 260px;
+
+    color: red;
+}
+
+.cadastrar {
+    margin-top: 240px;
+    margin-bottom: 20px;
+}
+
+.limpar {
+    width: 75px;
+}
+
+
+
+
