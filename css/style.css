@@ -61,13 +61,35 @@ input[type="text"], select {
 
 /* Textos de Validações */
 
-.txt-validacao {
+.txt-valida {
+    color: red;
+}
+
+.txt-marca {
     position: absolute;
     top: 50px;
     left: 260px;
-
-    color: red;
 }
+
+.txt-modelo {
+    position: absolute;
+    top: 85px;
+    left: 260px;
+}
+
+.txt-ano {
+    position: absolute;
+    top: 120px;
+    left: 260px;
+}
+
+.txt-opcionais {
+    position: absolute;
+    top: 155px;
+    left: 260px;
+}
+
+/* Botoes */
 
 .cadastrar {
     margin-top: 240px;
