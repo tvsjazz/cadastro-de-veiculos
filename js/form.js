@@ -66,3 +66,8 @@ function validaOutro(objeto) {
     document.querySelector('.txt-opcionais').innerText = "";
     return true;
 }
+
+function required() {
+    document.querySelector('#outro-text').toggleAttribute('required');
+    return;
+}
