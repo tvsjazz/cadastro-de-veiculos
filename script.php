@@ -4,22 +4,20 @@ $marca = $_POST['marca'];
 $modelo = $_POST['modelo'];
 $anoFabricacao = $_POST['anoFabricacao'];
 
+echo "Marca: $marca";
+echo "Modelo: $modelo";
+echo "Ano de Fabricação: $anoFabricacao";
+
 if(isset($_POST["opcionais"])) {
 
-    echo "Os bancos de dados que você conhece são: ";
+    echo "Os opcionais são: <br>";
 
     // Faz loop pelo array do banco
 
-    foreach($_POST["opcionais"] as $opcionais) {
+    foreach($_POST["opcionais"] as $opcional) {
 
-        echo "* $opcionais";
+        echo "- " . $opcional . "<br>";
     }
-} else {
-
-    echo "Você não escolheu número preferido!";
-
 }
-
-
 
 ?>
