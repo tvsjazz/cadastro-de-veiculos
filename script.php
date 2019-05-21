@@ -1,23 +1,30 @@
+<?php include("cabecalho.php"); ?>
 <?php
 
 $marca = $_POST['marca'];
 $modelo = $_POST['modelo'];
 $anoFabricacao = $_POST['anoFabricacao'];
 
-echo "Marca: $marca<br>";
-echo "Modelo: $modelo<br>";
-echo "Ano de Fabricação: $anoFabricacao<br>";
-
 if(isset($_POST['opcionais'])) {
 
-    echo "Os opcionais são: <br>";
-
-    // Faz loop pelo array do banco
-
+    $listaOpcionais = "";
     foreach($_POST['opcionais'] as $opcional) {
 
-        echo "- " . $opcional . "<br>";
+        $listaOpcionais =  "- $opcional <br>";
     }
 }
+$conexao = mysqli_connect('localhost', 'root', '', 'locadora');
+
+$query = "insert into veiculos (marca, modelo, anoFabricacao, opcionais) values ( '{$marca}', '{$modelo}', '{$anoFabricacao}', '{$listaOpcionais}'";
+if(mysqli_query($conexão, $query)) { ?>
+    <p class="alert-success">O carro da marca <?= $marca ?>, modelo <?= $modelo ?>, ano de fabricação <?= $anoFabricacao ?> <br>
+                            e com os seguintes opcionais: <?= $listaOpcionais ?> </p>
+<?php } else { ?>
+    <p class="alert-danger">O carro não foi adicionado </p>
+<?php
+}
+
+mysqli_close($conexao);
 
 ?>
+<?php include("rodape.php"); ?>

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Cadastro de Veículos</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="principal">
+<?php include("cabecalho.php"); ?>
                 <div class="header">
                     <h1>CADASTRO DE VEÍCULOS</h1>
                 </div>
@@ -83,11 +74,4 @@
                         <input class="limpar" type="reset" value="Limpar">
                     </div>
                 </form>
-            </div>    
-        </div>
-
-
-        <script src="js/form.js"></script>
-
-    </body>
-</html>
+<?php include("rodape.php"); ?>
