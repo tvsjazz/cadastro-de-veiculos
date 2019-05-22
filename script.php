@@ -29,6 +29,34 @@ if(isset($_POST['opcionais'])) {
             echo $opcional;
             $arCondicionado = $opcional;
         }
+        if($opcional == "Air Bag") {
+            echo $opcional;
+            $airBag = $opcional;
+        }
+        if($opcional == "Alarme") {
+            echo $opcional;
+            $alarme = $opcional;
+        }
+        if($opcional == "Banco de Couro") {
+            echo $opcional;
+            $bancoDeCouro = $opcional;
+        }
+        if($opcional == "Som") {
+            echo $opcional;
+            $som = $opcional;
+        }
+        if($opcional == "Travas") {
+            echo $opcional;
+            $travas = $opcional;
+        }
+        if($opcional == "Piloto Automático") {
+            echo $opcional;
+            $pilotoAutomatico = $opcional;
+        }
+        if($opcional == "Outro") {
+            echo $opcional;
+            $outro = $opcional;
+        }
     }
 }
 
