@@ -14,59 +14,53 @@ $travas = "";
 $pilotoAutomatico = "";
 $outro = "";
 
+echo "O carro da marca: $marca, modelo: $modelo e ano: $anoFabricacao. <br>";
+echo "Com os seguintes opcionais: <br>";
 
 if(isset($_POST['opcionais'])) {
 
-    $listaOpcionais = "";
     foreach($_POST['opcionais'] as $opcional) {
 
-        $listaOpcionais =  "- $opcional <br>";
         if($opcional == "Direção Hidráulica") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $direcao = $opcional;
         }
         if($opcional == "Ar Concicionado") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $arCondicionado = $opcional;
         }
         if($opcional == "Air Bag") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $airBag = $opcional;
         }
         if($opcional == "Alarme") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $alarme = $opcional;
         }
         if($opcional == "Banco de Couro") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $bancoDeCouro = $opcional;
         }
         if($opcional == "Som") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $som = $opcional;
         }
         if($opcional == "Travas") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $travas = $opcional;
         }
         if($opcional == "Piloto Automático") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $pilotoAutomatico = $opcional;
         }
         if($opcional == "Outro") {
-            echo $opcional;
+            echo " - $opcional <br>";
             $outro = $opcional;
         }
     }
 }
 
 $conexao = mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
-
-if($conexao) {
-    echo "Deu certo";
-} else {
-    echo "Deu errado";
-}
 
 $query = "insert into veiculos (marca, modelo, ano, direcao, ar_condicionado, air_bag, alarme, banco_de_couro, som, travas, piloto_automatico, outro) values ( '{$marca}', '{$modelo}', {$anoFabricacao}, '{$direcao}', '{$arCondicionado}', '{$airBag}', '{$alarme}', '{$bancoDeCouro}', '{$som}', '{$travas}', '{$pilotoAutomatico}', '{$outro}')";
 if(mysqli_query($conexao, $query)) { ?>
@@ -76,8 +70,6 @@ if(mysqli_query($conexao, $query)) { ?>
     <p class="alert-danger">O carro não foi adicionado </p>
 <?php
 }
-
-mysqli_close($conexao);
 
 ?>
 <?php include("rodape.php"); ?>
