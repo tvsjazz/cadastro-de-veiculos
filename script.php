@@ -62,8 +62,14 @@ if(isset($_POST['opcionais'])) {
 
 $conexao = mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
 
-$query = "insert into veiculos (marca, modelo, ano, direcao,ar_condicionado, air_bag, alarme, banco_de_couro, som, travas, piloto_automatico, outro) values ( '{$marca}', '{$modelo}', '{$anoFabricacao}', '{$direcao}', '{$arCondicionado}', '{$airBag}', '{$alarme}', '{$bancoDeCouro}', '{$som}', '{$travas}', '{$pilotoAutomatico}', '{$outro}'";
-if(mysqli_query($conexão, $query)) { ?>
+if($conexao) {
+    echo "Deu certo";
+} else {
+    echo "Deu errado";
+}
+
+$query = "insert into veiculos (marca, modelo, ano, direcao, ar_condicionado, air_bag, alarme, banco_de_couro, som, travas, piloto_automatico, outro) values ( '{$marca}', '{$modelo}', {$anoFabricacao}, '{$direcao}', '{$arCondicionado}', '{$airBag}', '{$alarme}', '{$bancoDeCouro}', '{$som}', '{$travas}', '{$pilotoAutomatico}', '{$outro}')";
+if(mysqli_query($conexao, $query)) { ?>
     <p class="alert-success">O carro da marca <?= $marca ?>, modelo <?= $modelo ?>, ano de fabricação <?= $anoFabricacao ?> <br>
                             e com os seguintes opcionais: <?= $listaOpcionais ?> </p>
 <?php } else { ?>
