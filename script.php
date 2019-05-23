@@ -14,51 +14,66 @@ $travas = "";
 $pilotoAutomatico = "";
 $outro = "";
 
-echo "O carro da marca: $marca, modelo: $modelo e ano: $anoFabricacao. <br>";
-echo "Com os seguintes opcionais: <br>";
+$erros = [];
+
+if(empty(trim($marca))) {
+    $erros[] = "Campo marca precisa ser selecionado";
+}
+if(empty(trim($modelo))) {
+    $erros[] = "Campo modelo precisa ter um modelo";
+}
+if($anoFabricacao < 1970 || $anoFabricacao > 2014) {
+    $erros[] = "Campo ano precisa ser de 1970 à 2014";
+}
+
+$listaOpcionais = "";
 
 if(isset($_POST['opcionais'])) {
 
     foreach($_POST['opcionais'] as $opcional) {
 
         if($opcional == "Direção Hidráulica") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $direcao = $opcional;
         }
         if($opcional == "Ar Concicionado") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $arCondicionado = $opcional;
         }
         if($opcional == "Air Bag") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $airBag = $opcional;
         }
         if($opcional == "Alarme") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $alarme = $opcional;
         }
         if($opcional == "Banco de Couro") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $bancoDeCouro = $opcional;
         }
         if($opcional == "Som") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $som = $opcional;
         }
         if($opcional == "Travas") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $travas = $opcional;
         }
         if($opcional == "Piloto Automático") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $pilotoAutomatico = $opcional;
         }
         if($opcional == "Outro") {
-            echo " - $opcional <br>";
+            $listaOpcionais = " - $opcional <br>";
             $outro = $opcional;
         }
     }
+} else {
+    $erros[] = "Campo opcionais precisa ter pelo menos um selecionado";
 }
+
+if(empty($erros)) {
 
 $conexao = mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
 
@@ -69,6 +84,11 @@ if(mysqli_query($conexao, $query)) { ?>
 <?php } else { ?>
     <p class="alert-danger">O carro não foi adicionado </p>
 <?php
+}
+} else {
+    foreach($erros as $erro) {
+        echo " - $erro <br>";
+    }
 }
 
 ?>
