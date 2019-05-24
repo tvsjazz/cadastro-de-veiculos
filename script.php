@@ -4,14 +4,14 @@
 $marca = $_POST['marca'];
 $modelo = $_POST['modelo'];
 $anoFabricacao = $_POST['anoFabricacao'];
-$direcao = "";
-$arCondicionado = "";
-$airBag = "";
-$alarme = "";
-$bancoDeCouro = "";
-$som = "";
-$travas = "";
-$pilotoAutomatico = "";
+$direcao = "N";
+$arCondicionado = "N";
+$airBag = "N";
+$alarme = "N";
+$bancoDeCouro = "N";
+$som = "N";
+$travas = "N";
+$pilotoAutomatico = "N";
 $outro = "";
 
 $erros = [];
@@ -34,48 +34,46 @@ if(isset($_POST['opcionais'])) {
 
         if($opcional == "Direção Hidráulica") {
             $listaOpcionais = " - $opcional <br>";
-            $direcao = $opcional;
+            $direcao = "S";
         }
         if($opcional == "Ar Concicionado") {
             $listaOpcionais = " - $opcional <br>";
-            $arCondicionado = $opcional;
+            $arCondicionado = "S";
         }
         if($opcional == "Air Bag") {
             $listaOpcionais = " - $opcional <br>";
-            $airBag = $opcional;
+            $airBag = "S";
         }
         if($opcional == "Alarme") {
             $listaOpcionais = " - $opcional <br>";
-            $alarme = $opcional;
+            $alarme = "S";
         }
         if($opcional == "Banco de Couro") {
             $listaOpcionais = " - $opcional <br>";
-            $bancoDeCouro = $opcional;
+            $bancoDeCouro = "S";
         }
         if($opcional == "Som") {
             $listaOpcionais = " - $opcional <br>";
-            $som = $opcional;
+            $som = "S";
         }
         if($opcional == "Travas") {
             $listaOpcionais = " - $opcional <br>";
-            $travas = $opcional;
+            $travas = "S";
         }
         if($opcional == "Piloto Automático") {
             $listaOpcionais = " - $opcional <br>";
-            $pilotoAutomatico = $opcional;
+            $pilotoAutomatico = "S";
         }
         if($opcional == "Outro" && isset($_POST['outro']) ) {
             $listaOpcionais = " - " . $_POST['outro'] . " <br>";
             $outro = $_POST['outro'];
         } else {
-            $erros = "O campo Outros precisa ser preenchido";
+            $erros[] = "O campo Outros precisa ser preenchido";
         }
     }
 } else {
     $erros[] = "Campo opcionais precisa ter pelo menos um selecionado";
 }
-
-echo $listaOpcionais;
 
 if(empty($erros)) {
 

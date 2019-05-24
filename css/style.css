@@ -97,14 +97,15 @@ input[type="text"], select {
 /* Botoes */
 
 .cadastrar {
-    margin-top: 240px;
-    margin-bottom: 20px;
+    margin-top: 220px;
+    margin-bottom: 10px;
+}
+
+.listarBtn {
+    margin-bottom: 10px;
+    width: 75px;
 }
 
 .limpar {
     width: 75px;
 }
-
-
-
-

@@ -1,0 +1,25 @@
+.header {
+    background-color: rgb(68, 146, 236);
+    text-align: center;
+}
+
+.header h1 {
+    padding-top: 5px;
+}
+
+table {
+    border-spacing: 5px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    text-align: left;
+}

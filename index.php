@@ -71,6 +71,7 @@
                     </div>
                     <div class="botoes">
                         <input class="cadastrar" type="submit" value="Cadastrar">
+                        <a href="listar.html" target="_blank" ><input class="listarBtn" type="button" value="Listar"></a>
                         <input class="limpar" type="reset" value="Limpar">
                     </div>
                 </form>
