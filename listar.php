@@ -40,8 +40,12 @@ function listaProdutos($conexao) {
 
                 $produtos = listaProdutos($conexao);
                 foreach($produtos as $produto) {
-                ?>
+                    if($produto == 'S') {
+                        $produto = 'X';
+                    }
+                    ?>
                     <tr>
+                        <td><?= $produto['codigo'] ?></td>
                         <td><?= $produto['marca'] ?></td>
                         <td><?= $produto['modelo'] ?></td>
                         <td><?= $produto['ano'] ?></td>
