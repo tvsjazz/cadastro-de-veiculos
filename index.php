@@ -62,9 +62,9 @@
                                 <label for="piloto-automatico">Piloto Automático</label>
                             </div>
                             <div>
-                                <input type="checkbox" class="checkbox" onselect="required()" id="outro">
+                                <input type="checkbox" class="checkbox" name="opcionais[]" value="Outro" onselect="required()" id="outro">
                                 <label for="outro">Outro</label>
-                                <input type="text" id="outro-text" name="opcionais[]" onblur="validaOutro(this);" value="Outro" disabled>
+                                <input type="text" id="outro-text" name="outro" onblur="validaOutro(this);" disabled>
                             </div>
                         </fieldset>
                         <span class="txt-valida txt-opcionais"></span>

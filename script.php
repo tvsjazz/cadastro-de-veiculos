@@ -64,20 +64,24 @@ if(isset($_POST['opcionais'])) {
             $listaOpcionais = " - $opcional <br>";
             $pilotoAutomatico = $opcional;
         }
-        if($opcional == "Outro") {
-            $listaOpcionais = " - $opcional <br>";
-            $outro = $opcional;
+        if($opcional == "Outro" && isset($_POST['outro']) ) {
+            $listaOpcionais = " - " . $_POST['outro'] . " <br>";
+            $outro = $_POST['outro'];
+        } else {
+            $erros = "O campo Outros precisa ser preenchido";
         }
     }
 } else {
     $erros[] = "Campo opcionais precisa ter pelo menos um selecionado";
 }
 
+echo $listaOpcionais;
+
 if(empty($erros)) {
 
 $conexao = mysqli_connect('localhost', 'root', '', 'locadoraveiculos');
 
-$query = "insert into veiculos (marca, modelo, ano, direcao, ar_condicionado, air_bag, alarme, banco_de_couro, som, travas, piloto_automatico, outro) values ( '{$marca}', '{$modelo}', {$anoFabricacao}, '{$direcao}', '{$arCondicionado}', '{$airBag}', '{$alarme}', '{$bancoDeCouro}', '{$som}', '{$travas}', '{$pilotoAutomatico}', '{$outro}')";
+$query = "insert into veiculo (marca, modelo, ano, direcao, ar_condicionado, air_bag, alarme, banco_couro, som, travas, piloto_automatico, outro) values ( '{$marca}', '{$modelo}', {$anoFabricacao}, '{$direcao}', '{$arCondicionado}', '{$airBag}', '{$alarme}', '{$bancoDeCouro}', '{$som}', '{$travas}', '{$pilotoAutomatico}', '{$outro}');";
 if(mysqli_query($conexao, $query)) { ?>
     <p class="alert-success">O carro da marca <?= $marca ?>, modelo <?= $modelo ?>, ano de fabricação <?= $anoFabricacao ?> <br>
                             e com os seguintes opcionais: <?= $listaOpcionais ?> </p>
